@@ -19,7 +19,7 @@ namespace DataGridView
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-           dtGrid.Rows.Add(txtNome.Text, txtCurso.Text);
+           dtGrid.Rows.Add(txtNome.Text, txtCurso.Text, txtCidade.Text);
            lblTotal.Text = dtGrid.RowCount.ToString();
         }
 
@@ -32,12 +32,15 @@ namespace DataGridView
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            dtGrid.SelectedCells[0].Value = txtAlterar.Text;
+            dtGrid.CurrentRow.Cells[0].Value =txtAlterar.Text;
+            dtGrid.CurrentRow.Cells[1].Value = txtAltCurso.Text;
+            dtGrid.CurrentRow.Cells[2].Value = txtAltCidade.Text;
         }
 
         private void btnTodos_Click(object sender, EventArgs e)
         {
             dtGrid.Rows.Clear();
+            lblTotal.Text = dtGrid.RowCount.ToString();
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -56,6 +59,8 @@ namespace DataGridView
             if (dtGrid.RowCount > 0)
             {
                 txtAlterar.Text = dtGrid.CurrentRow.Cells[0].Value.ToString();
+                txtAltCurso.Text = dtGrid.CurrentRow.Cells[1].Value.ToString();
+                txtAltCidade.Text = dtGrid.CurrentRow.Cells[2].Value.ToString();
             }
         }
     }

@@ -45,13 +45,20 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtAltCurso = new System.Windows.Forms.TextBox();
+            this.txtAltCidade = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(144, 41);
+            this.label1.Location = new System.Drawing.Point(144, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 82);
+            this.label2.Location = new System.Drawing.Point(144, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
@@ -78,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(125, 344);
+            this.label4.Location = new System.Drawing.Point(116, 344);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 3;
@@ -126,11 +133,12 @@
             this.dtGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dtAluno,
-            this.dtCurso});
-            this.dtGrid.Location = new System.Drawing.Point(141, 180);
+            this.dtCurso,
+            this.dtCidade});
+            this.dtGrid.Location = new System.Drawing.Point(97, 170);
             this.dtGrid.Name = "dtGrid";
             this.dtGrid.ReadOnly = true;
-            this.dtGrid.Size = new System.Drawing.Size(240, 150);
+            this.dtGrid.Size = new System.Drawing.Size(331, 150);
             this.dtGrid.TabIndex = 8;
             this.dtGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_CellClick);
             // 
@@ -155,9 +163,9 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(319, 338);
+            this.btnAlterar.Location = new System.Drawing.Point(326, 365);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(75, 45);
             this.btnAlterar.TabIndex = 10;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -165,7 +173,7 @@
             // 
             // btnTodos
             // 
-            this.btnTodos.Location = new System.Drawing.Point(294, 376);
+            this.btnTodos.Location = new System.Drawing.Point(287, 459);
             this.btnTodos.Name = "btnTodos";
             this.btnTodos.Size = new System.Drawing.Size(94, 23);
             this.btnTodos.TabIndex = 11;
@@ -175,7 +183,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(306, 405);
+            this.btnFechar.Location = new System.Drawing.Point(296, 488);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
             this.btnFechar.TabIndex = 12;
@@ -186,7 +194,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(230, 397);
+            this.lblTotal.Location = new System.Drawing.Point(209, 464);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(13, 13);
             this.lblTotal.TabIndex = 13;
@@ -195,17 +203,77 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(125, 397);
+            this.label6.Location = new System.Drawing.Point(113, 464);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Total de alunos:";
             // 
+            // txtAltCurso
+            // 
+            this.txtAltCurso.Location = new System.Drawing.Point(199, 378);
+            this.txtAltCurso.Name = "txtAltCurso";
+            this.txtAltCurso.Size = new System.Drawing.Size(100, 20);
+            this.txtAltCurso.TabIndex = 17;
+            // 
+            // txtAltCidade
+            // 
+            this.txtAltCidade.Location = new System.Drawing.Point(199, 420);
+            this.txtAltCidade.Name = "txtAltCidade";
+            this.txtAltCidade.Size = new System.Drawing.Size(100, 20);
+            this.txtAltCidade.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(117, 381);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Alterar Curso:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(117, 423);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Alterar Cidade:";
+            // 
+            // dtCidade
+            // 
+            this.dtCidade.HeaderText = "cidade";
+            this.dtCidade.Name = "dtCidade";
+            this.dtCidade.ReadOnly = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(144, 113);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Cidade:";
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(199, 113);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(146, 20);
+            this.txtCidade.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 450);
+            this.ClientSize = new System.Drawing.Size(484, 604);
+            this.Controls.Add(this.txtCidade);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtAltCidade);
+            this.Controls.Add(this.txtAltCurso);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnFechar);
@@ -249,6 +317,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtCurso;
+        private System.Windows.Forms.TextBox txtAltCurso;
+        private System.Windows.Forms.TextBox txtAltCidade;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtCidade;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCidade;
     }
 }
 
